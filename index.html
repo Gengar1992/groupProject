@@ -1,81 +1,19 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
-    <head>
-        <title> Main Page </title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-        .divider{
-        width: 5px;
-        height: auto;
-        }
-        body{
-           position: relative;
-           
-           background-image: url("homePageTest.jpg");
-
-        }
-    </style>
-    </head>
-    
-    <body>
-       
-      
+<head>
+    <title> Main Page </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="css/indexStyles.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
         <h3>Please choose a game from below</h3>
-        
-        <div style="text-align: center">
-            
-        <a href="GamePage1.html">
-        <button
-            Style="
-            background-color: cornflowerblue;
-            border-radius: 12px;
-            color: silver;
-            height: 60px;
-            width: 230px;
-            font-size: 20px;
-            font-family: cursive;"> 
-            Color matching game </button>
-        
-        </a>
-        
-        
-        <a href="GamePage2.html">
-        <button
-            Style="
-            background-color: cornflowerblue;
-            border-radius: 12px;
-            color: crimson;
-            height: 60px;
-            width: 230px;
-            font-size: 20px;
-            font-family: cursive;"> 
-            Shape matching game </button>
-        
-        </a>
-                
-
-        <a href="GamePage3.html">
-        <button
-            Style="
-            background-color: cornflowerblue;
-            border-radius: 12px;
-            color: blueviolet;
-            height: 60px;
-            width: 230px;
-            font-size: 20px;
-            font-family: cursive;"> 
-            Math Problem game </button>
-        
-        </a>
-       
-        </div> 
-    </body>
-    
+        <button onclick="document.location='ShapeGame.html'">Shape Game</button>
+        <button onclick="document.location='MathGame.html'">Math Problems</button>
+        <button onclick="document.location='ColorGame.html'">Color Game</button>
+    </div>
+</body>
 </html>
 
