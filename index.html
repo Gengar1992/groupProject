@@ -6,14 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="css/indexStyles.css" rel="stylesheet" />
+    <style>
+        .divider{
+        width: 5px;
+        height: auto;
+        }
+        body{
+           position: relative;
+           
+           background-image: url("images/homePageTest.jpg");
+
+        }
+    </style>
 </head>
 <body>
     <div>
-        <h3>Please choose a game from below</h3>
-        <button onclick="document.location='ShapeGame.html'">Shape Game</button>
-        <button onclick="document.location='MathGame.html'">Math Problems</button>
-        <button onclick="document.location='ColorGame.html'">Color Game</button>
+        <h3 style="padding: 10px; 
+            color: white; 
+            display: block; 
+            background: red;
+            text-align: center;
+            border: 3px solid black" >Please choose a game from below</h3>
+        <button Style="
+            background-color: cornflowerblue;
+            border-radius: 12px;
+            color: blueviolet;
+            height: 60px;
+            width: 230px;
+            font-size: 20px;
+            font-family: cursive;" onclick="document.location='ShapeGame.html'">Shape Game</button>
+        <button Style="
+            background-color: cornflowerblue;
+            border-radius: 12px;
+            color: crimson;
+            height: 60px;
+            width: 230px;
+            font-size: 20px;
+            font-family: cursive;" onclick="document.location='MathGame.html'">Math Problems</button>
+        <button Style="
+            background-color: cornflowerblue;
+            border-radius: 12px;
+            color: lawngreen;
+            height: 60px;
+            width: 230px;
+            font-size: 20px;
+            font-family: cursive;" onclick="document.location='ColorGame.html'">Color Game</button>
     </div>
 </body>
 </html>
-
