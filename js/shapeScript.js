@@ -1,4 +1,7 @@
-﻿const startButton = document.getElementById('start-btn')
+﻿//  CMSC 495 6382
+//  10/2/22 Jonas Theriot - Created Outline of Shape game.
+
+const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')

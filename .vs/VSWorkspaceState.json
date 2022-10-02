@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\images",
+    "\\js"
   ],
-  "SelectedNode": "\\404.html",
+  "SelectedNode": "\\js\\shapeScript.js",
   "PreviewInSolutionExplorer": false
 }
