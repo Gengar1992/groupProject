@@ -26,11 +26,12 @@ function setNextQuestion() {
 }
 
 function showQuestion(question) {
+    playQuestion(question)
     questionElement.innerText = question.question
     question.answers.forEach(answer => {
-        const button = document.createElement('button')
-        //button.src = answer.text
-        button.innerText = answer.text
+        const button = document.createElement('img')
+        button.src = answer.text
+        //button.innerText = answer.text
         button.classList.add('btn')
         if (answer.correct) {
             button.dataset.correct = answer.correct
@@ -52,6 +53,7 @@ function selectAnswer(e) {
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
     setStatusClass(document.body, correct)
+    playIsCorrect(correct)
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     })
@@ -76,13 +78,49 @@ function clearStatusClass(element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
 }
-
+function playQuestion(question) {
+    var audio = new Audio(question.questionAudio);
+    audio.play();
+}
+function playIsCorrect(correct) {
+    if (correct) {
+        var audio = new Audio('../sounds/ding.mp3');
+        audio.play();
+    }
+    if (!correct) {
+        var audio = new Audio('../sounds/buzzer.mp3');
+        audio.play();
+    }
+}
 const questions = [
     {
         question: 'Click the Rectangle',
         answers: [
-            { text: 78, correct: true },
-            { text: 78, correct: false }
-        ]
+            { text: '../images/rectangle.jpg', correct: true },
+            { text: '../images/circle.jpg', correct: false },
+            { text: '../images/ellipse.jpg', correct: false },
+            { text: '../images/parallelogram.jpg', correct: false }
+        ],
+        questionAudio: '../sounds/rectangle.mp3'
+    },
+    {
+        question: 'Click the Circle',
+        answers: [
+            { text: '../images/ellipse.jpg', correct: false },
+            { text: '../images/parallelogram.jpg', correct: false },
+            { text: '../images/rectangle.jpg', correct: false },
+            { text: '../images/circle.jpg', correct: true }
+        ],
+        questionAudio: '../sounds/circle.mp3'
+    },
+    {
+        question: 'Click the Ellipse',
+        answers: [
+            { text: '../images/parallelogram.jpg', correct: false },
+            { text: '../images/ellipse.jpg', correct: true },
+            { text: '../images/rectangle.jpg', correct: false },
+            { text: '../images/circle.jpg', correct: false }
+        ],
+        questionAudio: '../sounds/ellipse.mp3'
     }
 ]
