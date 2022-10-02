@@ -1,8 +1,10 @@
-﻿const startButton = document.getElementById('start-btn')
+const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
+
+
 
 let shuffledQuestions, currentQuestionIndex
 
@@ -26,11 +28,37 @@ function setNextQuestion() {
 }
 
 function showQuestion(question) {
-    questionElement.innerText = question.question
+    questionElement.innerText = question.question;
+    
+    let count = 0;
+    
     question.answers.forEach(answer => {
         const button = document.createElement('button')
+        
+      
+        
         button.innerText = answer.text
-        button.classList.add('btn')
+        switch(count){
+            case 0:
+            button.classList.add('btn1') ;  
+            count ++;
+            break;
+            
+            case 1:
+            button.classList.add('btn2');
+            count++;
+            break;
+            
+            case 2:
+            button.classList.add('btn3');
+            count++;
+            break;
+            
+            case 3:
+            button.classList.add('btn4');
+            break;
+        }
+       
         if (answer.correct) {
             button.dataset.correct = answer.correct
         }
@@ -78,35 +106,39 @@ function clearStatusClass(element) {
 
 const questions = [
     {
-        question: 'What is 2 + 2?',
+        question: ' Red ',
         answers: [
-            { text: '4', correct: true },
-            { text: '22', correct: false }
+            { text: '1.', correct: true},
+            { text: '2.', correct: false },
+            { text: '3.', correct: false },
+            { text: '4.', correct: false }
         ]
     },
     {
-        question: 'Who is the best YouTuber?',
+        question: 'Blue',
         answers: [
-            { text: 'Web Dev Simplified', correct: true },
-            { text: 'Traversy Media', correct: true },
-            { text: 'Dev Ed', correct: true },
-            { text: 'Fun Fun Function', correct: true }
+            { text: '1.', correct: false},
+            { text: '2.', correct: false },
+            { text: '3.', correct: false },
+            { text: '4.', correct: true }
         ]
     },
     {
-        question: 'Is web development fun?',
+        question: 'Green?',
         answers: [
-            { text: 'Kinda', correct: false },
-            { text: 'YES!!!', correct: true },
-            { text: 'Um no', correct: false },
-            { text: 'IDK', correct: false }
+            { text: '1.', correct: false },
+            { text: '2.', correct: true },
+            { text: '3.', correct: false },
+            { text: '4.', correct: false }
         ]
     },
     {
-        question: 'What is 4 * 2?',
+        question: 'Yellow',
         answers: [
-            { text: '6', correct: false },
-            { text: '8', correct: true }
+            { text: '1.', correct: false },
+            { text: '2.', correct: false },
+            { text: '3.', correct: true },
+            { text: '4.', correct: false }
         ]
     }
 ]
