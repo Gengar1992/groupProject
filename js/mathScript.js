@@ -1,4 +1,7 @@
-﻿const startButton = document.getElementById('start-btn')
+﻿//  CMSC 495 6382
+//  10/2/22 Aaron Methratta - Created Outline of Shape game.
+
+const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
@@ -81,32 +84,36 @@ const questions = [
         question: 'What is 2 + 2?',
         answers: [
             { text: '4', correct: true },
-            { text: '22', correct: false }
+            { text: '3', correct: false },
+            { text: '5', correct: false },
+            { text: '6', correct: false }
         ]
     },
     {
-        question: 'Who is the best YouTuber?',
+        question: 'What is 3 + 2?',
         answers: [
-            { text: 'Web Dev Simplified', correct: true },
-            { text: 'Traversy Media', correct: true },
-            { text: 'Dev Ed', correct: true },
-            { text: 'Fun Fun Function', correct: true }
+            { text: '4', correct: false },
+            { text: '5', correct: true },
+            { text: '7', correct: false },
+            { text: '6', correct: false }
         ]
     },
     {
-        question: 'Is web development fun?',
+        question: 'What is 1 + 1?',
         answers: [
-            { text: 'Kinda', correct: false },
-            { text: 'YES!!!', correct: true },
-            { text: 'Um no', correct: false },
-            { text: 'IDK', correct: false }
+            { text: '4', correct: false },
+            { text: '3', correct: false },
+            { text: '2', correct: true },
+            { text: '6', correct: false }
         ]
     },
     {
-        question: 'What is 4 * 2?',
+        question: 'What is 2 + 1?',
         answers: [
-            { text: '6', correct: false },
-            { text: '8', correct: true }
+            { text: '4', correct: false },
+            { text: '1', correct: false },
+            { text: '5', correct: false },
+            { text: '3', correct: true }
         ]
     }
 ]
