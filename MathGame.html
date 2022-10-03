@@ -1,31 +1,58 @@
+<!--
+        CMSC 495 6382
+        9/24/22 Aaron Methratta - webpage for each game.
+        9/25/22 William Rincon - Homepage and backgrounds
+        9/26/22 Jonas Theriot - Button navigation and blank CSS and JS files
+        10/1/ William Rincon - Build prototype for the shape game.
+        10/2/ Aaron Methratta - Build prototype for the math game.
+-->
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Math Problems</title>
+    <title>Shape Matching</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="css/mathStyles.css" rel="stylesheet" />
-    <script defer src="js/mathScript.js"></script>
+    <link href="css/colorStyles.css" rel="stylesheet" />
+    <script defer src="js/colorScript.js"></script>
     <style>
         
         body{
-           position: relative;
-           
-           background-image: url("images/numbersBackground.jpg");
-
+            
+        position: relative;
+           background-image: url("images/colorsBackground.jpg");
         }
+        
+        .btn{
+            
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+    outline: none;
+        }
+        
+       
     </style>
+    
 </head>
 <body>
+    <h3 style="padding: 10px; 
+            margin: 0px;
+            color: white; 
+            display: block; 
+            background: red;
+            text-align: center;
+            border: 3px solid black" >Welcome to the Shape game!</h3>
+    
     <div class="container">
         <div id="question-container" class="hide">
             <div id="question">Question</div>
             <div id="answer-buttons" class="btn-grid">
-                <button class="btn">Answer 1</button>
-                <button class="btn">Answer 2</button>
-                <button class="btn">Answer 3</button>
-                <button class="btn">Answer 4</button>
+                <button class="btn btn1">Answer 1</button>
+                <button class="btn btn2">Answer 2</button>
+                <button class="btn btn3">Answer 3</button>
+                <button class="btn btn4">Answer 4</button>
             </div>
         </div>
         <div class="controls">
@@ -33,13 +60,15 @@
             <button id="next-btn" class="next-btn btn hide">Next</button>
         </div>
     </div>
-    <button Style="
+        <button Style="
             background-color: cornflowerblue;
             border-radius: 12px;
             color: gold;
             height: 60px;
             width: 230px;
             font-size: 20px;
+            margin-left: 400px;
+            margin-bottom: 400px;
             font-family: cursive;" onclick="document.location='index.html'">Return to Main Page</button>
 </body>
 </html>
