@@ -13,12 +13,12 @@ body {
     --hue: var(--hue-neutral);
     padding: 0;
     margin: 0;
-    display: flex;
+    display: grid;
     width: 100vw;
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background-color: hsl(var(--hue), 100%, 20%);
+    
 }
 
     body.correct {
