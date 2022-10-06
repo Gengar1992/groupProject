@@ -1,4 +1,9 @@
-﻿*, *::before, *::after {
+/*
+CMSC 495 6382
+10/5/22 Aaron Methratta - Created CSS for html 
+*/
+
+*, *::before, *::after {
     box-sizing: border-box;
     font-family: Gotham Rounded;
 }
@@ -21,13 +26,6 @@ body {
     
 }
 
-    body.correct {
-        --hue: var(--hue-correct);
-    }
-
-    body.wrong {
-        --hue: var(--hue-wrong);
-    }
 
 .container {
     width: 800px;
