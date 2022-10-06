@@ -1,3 +1,8 @@
+/*
+CMSC 495 6382
+10/1/22 William Rincon - Created CSS for color game
+10/4/22 William Rincon - Built colored buttons for game
+*/
 *, *::before, *::after {
     box-sizing: border-box;
     font-family: Gotham Rounded;
@@ -22,13 +27,6 @@ body {
     
 }
 
-    body.correct {
-        --hue: var(--hue-correct);
-    }
-
-    body.wrong {
-        --hue: var(--hue-wrong);
-    }
 
 .container {
     width: 800px;
