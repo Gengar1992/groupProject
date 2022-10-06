@@ -1,4 +1,7 @@
-﻿*, *::before, *::after {
+/*  CMSC 495 6382
+     10/5/22 Jonas Theriot - Created CSS file
+ */
+*, *::before, *::after {
     box-sizing: border-box;
     font-family: Gotham Rounded;
 }
@@ -10,7 +13,7 @@
 }
 
 body {
-    --hue: var(--hue-neutral);
+    
     padding: 0;
     margin: 0;
     display: flex;
@@ -18,16 +21,8 @@ body {
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background-color: hsl(var(--hue), 100%, 20%);
 }
 
-    body.correct {
-        --hue: var(--hue-correct);
-    }
-
-    body.wrong {
-        --hue: var(--hue-wrong);
-    }
 
 .container {
     width: 800px;
