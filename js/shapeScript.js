@@ -1,5 +1,6 @@
-//  CMSC 495 6382
+﻿//  CMSC 495 6382
 //  10/2/22 Jonas Theriot - Created Outline of Shape game.
+//  10/5/22 Jonas Theriot - Added Sounds, Pictures and functions to display imgs and play audio. 
 
 const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
@@ -34,7 +35,6 @@ function showQuestion(question) {
     question.answers.forEach(answer => {
         const button = document.createElement('img')
         button.src = answer.text
-        //button.innerText = answer.text
         button.classList.add('btn')
         if (answer.correct) {
             button.dataset.correct = answer.correct
@@ -87,11 +87,11 @@ function playQuestion(question) {
 }
 function playIsCorrect(correct) {
     if (correct) {
-        var audio = new Audio('../sounds/ding.mp3');
+        var audio = new Audio('sounds/ding.mp3');
         audio.play();
     }
     if (!correct) {
-        var audio = new Audio('../sounds/buzzer.mp3');
+        var audio = new Audio('sounds/buzzer.mp3');
         audio.play();
     }
 }
@@ -99,31 +99,41 @@ const questions = [
     {
         question: 'Click the Rectangle',
         answers: [
-            { text: '../images/rectangle.jpg', correct: true },
-            { text: '../images/circle.jpg', correct: false },
-            { text: '../images/ellipse.jpg', correct: false },
-            { text: '../images/parallelogram.jpg', correct: false }
+            { text: 'images/rectangle.jpg', correct: true },
+            { text: 'images/circle.jpg', correct: false },
+            { text: 'images/ellipse.jpg', correct: false },
+            { text: 'images/parallelogram.jpg', correct: false }
         ],
-        questionAudio: '../sounds/rectangle.mp3'
+        questionAudio: 'sounds/rectangle.mp3'
     },
     {
         question: 'Click the Circle',
         answers: [
-            { text: '../images/ellipse.jpg', correct: false },
-            { text: '../images/parallelogram.jpg', correct: false },
-            { text: '../images/rectangle.jpg', correct: false },
-            { text: '../images/circle.jpg', correct: true }
+            { text: 'images/ellipse.jpg', correct: false },
+            { text: 'images/parallelogram.jpg', correct: false },
+            { text: 'images/rectangle.jpg', correct: false },
+            { text: 'images/circle.jpg', correct: true }
         ],
-        questionAudio: '../sounds/circle.mp3'
+        questionAudio: 'sounds/circle.mp3'
     },
     {
         question: 'Click the Ellipse',
         answers: [
-            { text: '../images/parallelogram.jpg', correct: false },
-            { text: '../images/ellipse.jpg', correct: true },
-            { text: '../images/rectangle.jpg', correct: false },
-            { text: '../images/circle.jpg', correct: false }
+            { text: 'images/parallelogram.jpg', correct: false },
+            { text: 'images/ellipse.jpg', correct: true },
+            { text: 'images/rectangle.jpg', correct: false },
+            { text: 'images/circle.jpg', correct: false }
         ],
-        questionAudio: '../sounds/ellipse.mp3'
+        questionAudio: 'sounds/ellipse.mp3'
+    },
+    {
+        question: 'Click the Parallelogram',
+        answers: [
+            { text: 'images/rectangle.jpg', correct: false },
+            { text: 'images/ellipse.jpg', correct: false },
+            { text: 'images/parallelogram.jpg', correct: true },
+            { text: 'images/circle.jpg', correct: false }
+        ],
+        questionAudio: 'sounds/parallelogram.mp3'
     }
 ]
