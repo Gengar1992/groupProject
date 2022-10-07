@@ -1,10 +1,12 @@
+﻿//  CMSC 495 6382
+//  10/2/22 Aaron Methratta - Created Outline of Shape game.
+//  10/6/22 Aaron Methratta - Added questions and functions that plays the audio. 
+
 const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
-
-
 
 let shuffledQuestions, currentQuestionIndex
 
@@ -28,37 +30,12 @@ function setNextQuestion() {
 }
 
 function showQuestion(question) {
-    questionElement.innerText = question.question;
-    
-    let count = 0;
-    
+    playQuestion(question)
+    questionElement.innerText = question.question
     question.answers.forEach(answer => {
         const button = document.createElement('button')
-        
-      
-        
         button.innerText = answer.text
-        switch(count){
-            case 0:
-            button.classList.add('btn1') ;  
-            count ++;
-            break;
-            
-            case 1:
-            button.classList.add('btn2');
-            count++;
-            break;
-            
-            case 2:
-            button.classList.add('btn3');
-            count++;
-            break;
-            
-            case 3:
-            button.classList.add('btn4');
-            break;
-        }
-       
+        button.classList.add('btn')
         if (answer.correct) {
             button.dataset.correct = answer.correct
         }
@@ -79,6 +56,7 @@ function selectAnswer(e) {
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
     setStatusClass(document.body, correct)
+    playIsCorrect(correct)
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     })
@@ -104,41 +82,60 @@ function clearStatusClass(element) {
     element.classList.remove('wrong')
 }
 
+function playQuestion(question) {
+    var audio = new Audio(question.questionAudio);
+    audio.play();
+}
+function playIsCorrect(correct) {
+    if (correct) {
+        var audio = new Audio('sounds/ding.mp3');
+        audio.play();
+    }
+    if (!correct) {
+        var audio = new Audio('sounds/buzzer.mp3');
+        audio.play();
+    }
+}
+
 const questions = [
     {
-        question: ' Red ',
+        question: 'What is 2 + 2?',
         answers: [
-            { text: '1.', correct: true},
-            { text: '2.', correct: false },
-            { text: '3.', correct: false },
-            { text: '4.', correct: false }
-        ]
+            { text: '4', correct: true },
+            { text: '3', correct: false },
+            { text: '5', correct: false },
+            { text: '6', correct: false }
+        ],
+        questionAudio: 'sounds/twoPlusTwo.mp3'
     },
     {
-        question: 'Blue',
+        question: 'What is 3 + 2?',
         answers: [
-            { text: '1.', correct: false},
-            { text: '2.', correct: false },
-            { text: '3.', correct: false },
-            { text: '4.', correct: true }
-        ]
+            { text: '4', correct: false },
+            { text: '5', correct: true },
+            { text: '7', correct: false },
+            { text: '6', correct: false }
+        ],
+        questionAudio: 'sounds/threePlusTwo.mp3'
     },
     {
-        question: 'Green?',
+        question: 'What is 1 + 1?',
         answers: [
-            { text: '1.', correct: false },
-            { text: '2.', correct: true },
-            { text: '3.', correct: false },
-            { text: '4.', correct: false }
-        ]
+            { text: '4', correct: false },
+            { text: '3', correct: false },
+            { text: '2', correct: true },
+            { text: '6', correct: false }
+        ],
+        questionAudio: 'sounds/onePlusOne.mp3'
     },
     {
-        question: 'Yellow',
+        question: 'What is 2 + 1?',
         answers: [
-            { text: '1.', correct: false },
-            { text: '2.', correct: false },
-            { text: '3.', correct: true },
-            { text: '4.', correct: false }
-        ]
+            { text: '4', correct: false },
+            { text: '1', correct: false },
+            { text: '5', correct: false },
+            { text: '3', correct: true }
+        ],
+        questionAudio: 'sounds/twoPlusOne.mp3'
     }
 ]
